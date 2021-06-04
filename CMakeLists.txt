@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.10...3.17)
 
+
+
 project(huobi LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(huobi_VERSION_MAJOR 2)
-set(huobi_VERSION_MINOR 3)
+set(huobi_VERSION_MINOR 4)
+
+SET(CMAKE_INSTALL_PREFIX ../../)
 
 configure_file(
         "${PROJECT_SOURCE_DIR}/huobiConfig.h.in"
@@ -25,7 +29,7 @@ AUX_SOURCE_DIRECTORY(./src/ DIR_SRCS)
 add_library(${PROJECT_NAME} STATIC ${DIR_SRCS} ${DIR_SRCS_CLIENT})
 
 install(TARGETS ${PROJECT_NAME}
-        LIBRARY DESTINATION huobi/
-        ARCHIVE DESTINATION huobi/)
+        LIBRARY DESTINATION lib/
+        ARCHIVE DESTINATION lib/)
 
-install(DIRECTORY include/ DESTINATION huobi)
+install(DIRECTORY include/ DESTINATION include)
