@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(huobi_VERSION_MAJOR 2)
 set(huobi_VERSION_MINOR 4)
 
-SET(CMAKE_INSTALL_PREFIX ../../)
+SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/../)
 
 configure_file(
         "${PROJECT_SOURCE_DIR}/huobiConfig.h.in"
@@ -32,4 +32,4 @@ install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION lib/
         ARCHIVE DESTINATION lib/)
 
-install(DIRECTORY include/ DESTINATION include)
+install(DIRECTORY include/ DESTINATION include/)
